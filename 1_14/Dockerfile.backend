@@ -1,1 +1,13 @@
-# use here COPY 1_13 .
+
+FROM golang:1.16-alpine
+
+ENV REQUEST_ORIGIN=http://localhost:5001
+EXPOSE 8080
+
+WORKDIR /backend
+
+COPY 1_13 .
+
+RUN go build
+
+CMD ["./server"]

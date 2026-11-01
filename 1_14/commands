@@ -1,0 +1,4 @@
+docker build -t go-backend -f Dockerfile.backend ..
+docker build -t react-app -f Dockerfile.frontend ..
+docker run -d -p 8080:8080 go-backend
+docker run -d -p 5001:5001 react-app
